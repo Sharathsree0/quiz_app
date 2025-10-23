@@ -2,7 +2,9 @@ import React from 'react'
 
 function Quizpage() {
   return (
-    <div>Quiz start here..</div>
+    <div>
+        <h2>Quiz start here..</h2>
+    </div>
   )
 }
 
