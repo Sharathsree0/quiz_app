@@ -9,7 +9,36 @@
         "C++"
       ],
       "answer": "JavaScript"
-    }
+    },{
+     "question": "Which hook is used for managing state in a functional React component?",
+      "options": ["useEffect", "useState", "useContext", "useReducer"],
+      "answer": "useState"
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": [
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Colorful Style Sheets",
+      "Computer Style Sheets"
+    ],
+    "answer": "Cascading Style Sheets"
+  },
+  {
+    "question": "Which HTML tag is used to display an image?",
+    "options": ["<img>", "<image>", "<src>", "<pic>"],
+    "answer": "<img>"
+  },
+  {
+    "question": "What does DOM stand for?",
+    "options": [
+      "Document Object Model",
+      "Data Object Management",
+      "Digital Ordinance Model",
+      "Desktop Oriented Mode"
+    ],
+    "answer": "Document Object Model"
+  }
   ],
   "users": [
   ]
