@@ -6,6 +6,7 @@ export default function Quizpage() {
 const [question,setquestion]=useState([])
   const [index,setindex]=useState(0)
   const [score,setscore]=useState(0)
+  const[feedback,setfeedback]=useState(null)
 const navi=useNavigate()
 useEffect(()=>{
     const fetchdata=async()=>{
@@ -20,13 +21,16 @@ useEffect(()=>{
 
 const handleanswer=(selectedoptions)=>{
     const currentquestion =question[index]
-
+if(feedback)return;
     if(selectedoptions===currentquestion.answer){
        setscore(score+1);
-       alert("correct!")
-    }else{alert("wrong!")}
-
-    setindex(index+1)
+       setfeedback("correct!")
+    }else{
+        setfeedback("wrong!")}
+        setTimeout(()=>{
+            setfeedback(null);
+            setindex(index+1)
+        },2000)
 }
 
 if(question.length===0){return <div>Loding...</div>};
@@ -46,6 +50,7 @@ const currentquestions=question[index];
     <div>
         <h3>Question {index+1} of {question.length}</h3>
         <h2>{currentquestions.question}</h2>
+        {feedback && <h3>{feedback}</h3> }
         <div>
             {currentquestions.options.map((options,i)=>{
                return <button key={i} onClick={()=>handleanswer(options)}>{options}</button>
