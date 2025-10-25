@@ -7,6 +7,7 @@ const [question,setquestion]=useState([])
   const [index,setindex]=useState(0)
   const [score,setscore]=useState(0)
   const[feedback,setfeedback]=useState(null)
+  const[quiztimer,setquiztimer]=useState(100)
 const navi=useNavigate()
 useEffect(()=>{
     const fetchdata=async()=>{
@@ -32,13 +33,26 @@ if(feedback)return;
             setindex(index+1)
         },2000)
 }
+useEffect(()=>{
+    if(quiztimer<=0)return;
+        const endtimers =setInterval(()=>{
+            setquiztimer(pre=>pre-1)
+        },1000)
+    return ()=>clearInterval(endtimers)
+},[quiztimer])
 
-if(question.length===0){return <div>Loding...</div>};
 
-if(index>=question.length){
+if(question.length===0){
+    return <div>Loding...</div>};
+    const timetaken = 100 -quiztimer;
+    const minute= Math.floor(timetaken/60)
+    const second = timetaken%60
+
+if(quiztimer<=0 || index>=question.length){
     return(
         <>
         <h2>Quiz completed </h2>
+        <h3>Time taken :{minute} minute and {second} seconds</h3>
         <p>your final score is {score} out of {question.length} </p>
         <button onClick={()=>navi("/")} >Back</button>
         </>
@@ -48,7 +62,7 @@ if(index>=question.length){
 const currentquestions=question[index];
   return (
     <div>
-        <h3>Question {index+1} of {question.length}</h3>
+        <h3>Question {index+1} of {question.length}</h3> <h3>Remining time :{Math.floor(quiztimer/60)}:{quiztimer % 60}</h3>
         <h2>{currentquestions.question}</h2>
         {feedback && <h3>{feedback}</h3> }
         <div>
