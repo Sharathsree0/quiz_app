@@ -31,15 +31,15 @@ if(feedback)return;
         setTimeout(()=>{
             setfeedback(null);
             setindex(index+1)
-        },2000)
+        },1000)
 }
 useEffect(()=>{
-    if(quiztimer<=0)return;
+    if(quiztimer <= 0 || (question.length > 0 && index >= question.length))return;
         const endtimers =setInterval(()=>{
             setquiztimer(pre=>pre-1)
         },1000)
     return ()=>clearInterval(endtimers)
-},[quiztimer])
+},[quiztimer,index,question])
 
 
 if(question.length===0){
@@ -74,4 +74,3 @@ const currentquestions=question[index];
     </div>
   );
 }
-
