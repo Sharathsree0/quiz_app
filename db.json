@@ -8,42 +8,71 @@
         "Java",
         "C++"
       ],
-      "answer": "JavaScript"
-    },{
-     "question": "Which hook is used for managing state in a functional React component?",
-      "options": ["useEffect", "useState", "useContext", "useReducer"],
-      "answer": "useState"
-  },
-  {
-    "question": "What does CSS stand for?",
-    "options": [
-      "Creative Style Sheets",
-      "Cascading Style Sheets",
-      "Colorful Style Sheets",
-      "Computer Style Sheets"
-    ],
-    "answer": "Cascading Style Sheets"
-  },
-  {
-    "question": "Which HTML tag is used to display an image?",
-    "options": ["<img>", "<image>", "<src>", "<pic>"],
-    "answer": "<img>"
-  },
-  {
-    "question": "What does DOM stand for?",
-    "options": [
-      "Document Object Model",
-      "Data Object Management",
-      "Digital Ordinance Model",
-      "Desktop Oriented Mode"
-    ],
-    "answer": "Document Object Model"
-  }
+      "answer": "JavaScript",
+      "id": "3767"
+    },
+    {
+      "question": "Which hook is used for managing state in a functional React component?",
+      "options": [
+        "useEffect",
+        "useState",
+        "useContext",
+        "useReducer"
+      ],
+      "answer": "useState",
+      "id": "c310"
+    },
+    {
+      "question": "What does CSS stand for?",
+      "options": [
+        "Creative Style Sheets",
+        "Cascading Style Sheets",
+        "Colorful Style Sheets",
+        "Computer Style Sheets"
+      ],
+      "answer": "Cascading Style Sheets",
+      "id": "1b04"
+    },
+    {
+      "question": "Which HTML tag is used to display an image?",
+      "options": [
+        "<img>",
+        "<image>",
+        "<src>",
+        "<pic>"
+      ],
+      "answer": "<img>",
+      "id": "7adc"
+    },
+    {
+      "question": "What does DOM stand for?",
+      "options": [
+        "Document Object Model",
+        "Data Object Management",
+        "Digital Ordinance Model",
+        "Desktop Oriented Mode"
+      ],
+      "answer": "Document Object Model",
+      "id": "2707"
+    },
+    {
+      "id": "6e50",
+      "question": "what is HTML",
+      "options": [
+        "Hype Text Markup Language",
+        "Hyper Tool Marking Language",
+        "Hyper Text Markup Language",
+        "High Text Marking Language"
+      ],
+      "answer": "Hyper Text Markup Language"
+    }
   ],
   "users": [
-    {"name":"sharathsree",
-      "email":"sharath@gmail.com",
-      "password":"1234567890"
-  }
+    {
+      "name": "sharathsree",
+      "email": "sharath@gmail.com",
+      "password": "1234567890",
+      "id": "9246"
+    }
   ]
 }
