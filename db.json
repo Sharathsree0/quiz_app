@@ -41,5 +41,9 @@
   }
   ],
   "users": [
+    {"name":"sharathsree",
+      "email":"sharath@gmail.com",
+      "password":"1234567890"
+  }
   ]
 }
