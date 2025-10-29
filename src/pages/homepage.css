@@ -1,0 +1,113 @@
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #dce8ff, #f3f1ff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Home Container ---------- */
+.home-container {
+  text-align: center;
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;
+  animation: fadeIn 0.6s ease;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Logo / Title ---------- */
+.home-container h1 {
+  font-size: 32px;
+  color: #6a5acd;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.home-container p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+/* ---------- Buttons ---------- */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  background: linear-gradient(135deg, #8c8dfc, #b19bff);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.home-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(108, 99, 255, 0.2);
+  background: linear-gradient(135deg, #7b77fa, #a68aff);
+}
+
+/* ---------- Decorative Circles ---------- */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.circle.one {
+  width: 120px;
+  height: 120px;
+  background: #d5d1ff;
+  top: -50px;
+  left: -50px;
+}
+
+.circle.two {
+  width: 200px;
+  height: 200px;
+  background: #f4eaff;
+  bottom: -80px;
+  right: -80px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 40px 25px;
+  }
+
+  .home-container h1 {
+    font-size: 26px;
+  }
+
+  .home-btn {
+    width: 100%;
+  }
+}

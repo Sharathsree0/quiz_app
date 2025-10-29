@@ -2,53 +2,66 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 export default function Questionsform() {
-    const [data, setdata] = useState({ question: "", options: ["", "", "", ""], answer: "" })
+    const [data, setdata] = useState({ question: "", options: ["", "", "", ""], answer: "" });
 
     const handlequestionchange = (e) => {
-        setdata({ ...data, [e.target.name]: e.target.value })
-    }
+        setdata({ ...data, [e.target.name]: e.target.value });
+    };
 
     const handleoption = (e, index) => {
         const newoption = [...data.options];
         newoption[index] = e.target.value;
-        setdata({ ...data, options: newoption })
-    }
+        setdata({ ...data, options: newoption });
+    };
 
     const handledsub = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:5001/datas', data)
-            console.log("successfully added", res.data)
-            setdata({ question: "", options: ["", "", "", ""], answer: "" })
-        } catch (err) { console.error(err) }
-    }
+            const res = await axios.post('http://localhost:5001/datas', data);
+            console.log("Successfully added:", res.data);
+            setdata({ question: "", options: ["", "", "", ""], answer: "" });
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     return (
         <form onSubmit={handledsub}>
+            <h2 style={{ textAlign: "center", color: "#7a5cf1", marginBottom: "15px" }}>Add a New Question 📝</h2>
+
             <label>Question</label>
-            <input 
-                type="text" 
-                name="question" 
-                value={data.question} 
-                onChange={handlequestionchange} 
-            /> <br />
+            <input
+                type="text"
+                name="question"
+                value={data.question}
+                onChange={handlequestionchange}
+                placeholder="Enter your question"
+            />
+
             <hr />
-            <label>Option 1</label>
-            <input type="text" value={data.options[0]} onChange={(e) => handleoption(e, 0)} />
-            <label>Option 2</label>
-            <input type="text" value={data.options[1]} onChange={(e) => handleoption(e, 1)} /> <br />
-            <label>Option 3</label>
-            <input type="text" value={data.options[2]} onChange={(e) => handleoption(e, 2)} />
-            <label>Option 4</label>
-            <input type="text" value={data.options[3]} onChange={(e) => handleoption(e, 3)} /> <br />
-            <label>Answer :</label>
-            <input 
-                type="text" 
-                name="answer" 
-                value={data.answer} 
-                onChange={handlequestionchange} 
-            /> <br />
-            <button type='submit' >Save</button>
+
+            {data.options.map((opt, i) => (
+                <div key={i}>
+                    <label>Option {i + 1}</label>
+                    <input
+                        type="text"
+                        value={opt}
+                        onChange={(e) => handleoption(e, i)}
+                        placeholder={`Enter option ${i + 1}`}
+                    />
+                </div>
+            ))}
+
+            <label>Answer</label>
+            <input
+                type="text"
+                name="answer"
+                value={data.answer}
+                onChange={handlequestionchange}
+                placeholder="Enter correct answer"
+            />
+
+            <button type="submit">💾 Save Question</button>
         </form>
     );
 }

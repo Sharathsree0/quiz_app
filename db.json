@@ -54,17 +54,6 @@
       ],
       "answer": "Document Object Model",
       "id": "2707"
-    },
-    {
-      "id": "6e50",
-      "question": "what is HTML",
-      "options": [
-        "Hype Text Markup Language",
-        "Hyper Tool Marking Language",
-        "Hyper Text Markup Language",
-        "High Text Marking Language"
-      ],
-      "answer": "Hyper Text Markup Language"
     }
   ],
   "users": [
