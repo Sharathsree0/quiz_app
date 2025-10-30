@@ -5,15 +5,12 @@ import './homepage.css'
 function Homepage() {
   return (
     <div className="home-container">
-      {/* Decorative circles */}
       <div className="circle one"></div>
       <div className="circle two"></div>
 
-      {/* Header */}
-      <h1>Welcome to QuizVerse 🎯</h1>
+      <h1>Welcome to Quizify 🎯</h1>
       <p>Test your knowledge and challenge your friends!</p>
 
-      {/* Buttons */}
       <div className="home-buttons">
         <Link to="/quiz">
           <button className="home-btn">Start Quiz</button>

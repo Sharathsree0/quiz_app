@@ -7,7 +7,7 @@ export default function Quizpage() {
   const [index, setindex] = useState(0);
   const [score, setscore] = useState(0);
   const [feedback, setfeedback] = useState(null);
-  const [quiztimer, setquiztimer] = useState(100);
+  const [quiztimer, setquiztimer] = useState(10);
   const navi = useNavigate();
 
   useEffect(() => {
