@@ -61,7 +61,7 @@ export default function Questionsform() {
                 placeholder="Enter correct answer"
             />
 
-            <button type="submit">💾 Save Question</button>
+            <button type="submit"> 💾 Save Question</button>
         </form>
     );
 }
